@@ -67,6 +67,20 @@ public class FramesImageBuilder implements Accumulator<BufferedImage, Snapshot> 
     snapshots = new ArrayList<>();
   }
 
+  public FramesImageBuilder(
+      int frameW,
+      int frameH,
+      int nOfFrames,
+      double deltaT,
+      double startT,
+      Direction direction,
+      boolean justLastSnapshot,
+      Drawer drawer
+  ){
+    this(frameW, frameH, nOfFrames, deltaT, direction, justLastSnapshot, drawer);
+    this.lastDrawnT = startT;
+  }
+
   public enum Direction {
     HORIZONTAL, VERTICAL
   }

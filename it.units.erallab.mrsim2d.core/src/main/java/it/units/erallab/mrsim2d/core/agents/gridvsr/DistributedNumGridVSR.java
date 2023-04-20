@@ -67,6 +67,10 @@ public class DistributedNumGridVSR extends NumGridVSR implements NumMultiBrained
     return timedRealFunctionsGrid.values().stream().filter(Objects::nonNull).toList();
   }
 
+  public Grid<TimedRealFunction> brainsGrid() {
+    return timedRealFunctionsGrid;
+  }
+
   @Override
   protected Grid<Double> computeActuationValues(double t, Grid<double[]> inputsGrid) {
     // create actual input grid (concat sensed values and communication signals)
